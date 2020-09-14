@@ -14,14 +14,14 @@ public class BowlingGame {
 
     private void getSumScores(int[] numberOfKnockdowns, int index) {
         int value = numberOfKnockdowns[index];
+        frameScore += value;
         if (isFirstThrow && value != 10) {
             isFirstThrow = false;
             sumScores += value;
-            frameScore += value;
             return;
         } else if (value == 10){
             calculateStrikeFrame(numberOfKnockdowns, index);
-        } else if (frameScore + value == 10){
+        } else if (frameScore == 10){
             calculateSpareFrame(numberOfKnockdowns, index);
         } else {
             sumScores += value;
