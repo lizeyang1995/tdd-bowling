@@ -32,8 +32,12 @@ public class BowlingGame {
     }
 
     private void calculateSpareFrame(int[] numberOfKnockdowns, int index) {
-        sumScores += numberOfKnockdowns[index];
-        sumScores += numberOfKnockdowns[index + 1];
+        if (round <= 10) {
+            sumScores += numberOfKnockdowns[index];
+            sumScores += numberOfKnockdowns[index + 1];
+        } else {
+            sumScores += numberOfKnockdowns[index];
+        }
     }
 
     private void calculateStrikeFrame(int[] numberOfKnockdowns, int index) {
