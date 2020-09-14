@@ -23,4 +23,12 @@ public class BowlingGameTest {
         int[] numberOfKnockdowns = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         assertThrows(IllegalArgumentException.class, () -> bowlingGame.calculate(numberOfKnockdowns));
     }
+
+    @Test
+    void should_return_sum_when_every_frame_less_than_10() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfKnockdowns = {1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2};
+        int result = bowlingGame.calculate(numberOfKnockdowns);
+        assertEquals(30, result);
+    }
 }
