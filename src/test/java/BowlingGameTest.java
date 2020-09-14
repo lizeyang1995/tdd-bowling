@@ -53,4 +53,12 @@ public class BowlingGameTest {
         int result = bowlingGame.calculate(numberOfKnockdowns);
         assertEquals(50, result);
     }
+
+    @Test
+    void should_return_sum_when_calculate_given_array_exists_spare() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfKnockdowns = {10, 1, 2, 10, 5, 5, 1, 2, 1, 2, 5, 5, 1, 2, 1, 2, 1, 2};
+        int result = bowlingGame.calculate(numberOfKnockdowns);
+        assertEquals(73, result);
+    }
 }
