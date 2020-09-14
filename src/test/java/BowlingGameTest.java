@@ -18,16 +18,23 @@ public class BowlingGameTest {
     }
 
     @Test
-    void should_throw_exception_when_calculation_given_numbers_less_than_12() {
+    void should_throw_exception_when_calculation_given_array_less_than_12() {
         BowlingGame bowlingGame = new BowlingGame();
         int[] numberOfKnockdowns = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
         assertThrows(IllegalArgumentException.class, () -> bowlingGame.calculate(numberOfKnockdowns));
     }
 
     @Test
-    void should_throw_exception_when_calculation_given_numbers_larger_than_20() {
+    void should_throw_exception_when_calculation_given_array_larger_than_20() {
         BowlingGame bowlingGame = new BowlingGame();
         int[] numberOfKnockdowns = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        assertThrows(IllegalArgumentException.class, () -> bowlingGame.calculate(numberOfKnockdowns));
+    }
+
+    @Test
+    void should_throw_exception_when_two_throw_numbers_larger_than_10() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfKnockdowns = {0, 0, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         assertThrows(IllegalArgumentException.class, () -> bowlingGame.calculate(numberOfKnockdowns));
     }
 
