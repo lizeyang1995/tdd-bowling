@@ -3,8 +3,15 @@ public class BowlingGame {
     public int calculate(int[] numberOfKnockdowns) {
         throwError(numberOfKnockdowns);
         int sumScores = 0;
-        for(int number : numberOfKnockdowns) {
-            sumScores += number;
+        for(int index = 0; index < numberOfKnockdowns.length; index++) {
+            int value = numberOfKnockdowns[index];
+            if (value != 10) {
+                sumScores += value;
+            } else {
+                sumScores += value;
+                sumScores += numberOfKnockdowns[index + 1];
+                sumScores += numberOfKnockdowns[index + 2];
+            }
         }
         return sumScores;
     }

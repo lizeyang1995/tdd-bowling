@@ -45,4 +45,12 @@ public class BowlingGameTest {
         int result = bowlingGame.calculate(numberOfKnockdowns);
         assertEquals(30, result);
     }
+
+    @Test
+    void should_return_sum_when_calculate_given_array_exists_strike() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfKnockdowns = {10, 1, 2, 10, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2};
+        int result = bowlingGame.calculate(numberOfKnockdowns);
+        assertEquals(50, result);
+    }
 }
