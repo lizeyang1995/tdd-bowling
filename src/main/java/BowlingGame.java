@@ -6,7 +6,7 @@ public class BowlingGame {
 
     public int calculate(int[] numberOfKnockdowns) {
         throwError(numberOfKnockdowns);
-        for(int index = 0; index < numberOfKnockdowns.length; index++) {
+        for(int index = 0; index < numberOfKnockdowns.length && round <= 10; index++) {
             getSumScores(numberOfKnockdowns, index);
         }
         return sumScores;
@@ -32,22 +32,14 @@ public class BowlingGame {
     }
 
     private void calculateSpareFrame(int[] numberOfKnockdowns, int index) {
-        if (round <= 10) {
-            sumScores += numberOfKnockdowns[index];
-            sumScores += numberOfKnockdowns[index + 1];
-        } else {
-            sumScores += numberOfKnockdowns[index];
-        }
+        sumScores += numberOfKnockdowns[index];
+        sumScores += numberOfKnockdowns[index + 1];
     }
 
     private void calculateStrikeFrame(int[] numberOfKnockdowns, int index) {
-        if (round <= 10) {
-            sumScores += numberOfKnockdowns[index];
-            sumScores += numberOfKnockdowns[index + 1];
-            sumScores += numberOfKnockdowns[index + 2];
-        } else {
-            sumScores += numberOfKnockdowns[index];
-        }
+        sumScores += numberOfKnockdowns[index];
+        sumScores += numberOfKnockdowns[index + 1];
+        sumScores += numberOfKnockdowns[index + 2];
     }
 
     private void throwError(int[] numberOfKnockdowns) {
