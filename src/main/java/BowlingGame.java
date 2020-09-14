@@ -2,6 +2,7 @@ public class BowlingGame {
     private int sumScores = 0;
     private boolean isFirstThrow = true;
     private int frameScore = 0;
+    private int round = 1;
 
     public int calculate(int[] numberOfKnockdowns) {
         throwError(numberOfKnockdowns);
@@ -27,6 +28,7 @@ public class BowlingGame {
         }
         isFirstThrow = true;
         frameScore = 0;
+        round++;
     }
 
     private void calculateSpareFrame(int[] numberOfKnockdowns, int index) {
@@ -35,9 +37,13 @@ public class BowlingGame {
     }
 
     private void calculateStrikeFrame(int[] numberOfKnockdowns, int index) {
-        sumScores += numberOfKnockdowns[index];
-        sumScores += numberOfKnockdowns[index + 1];
-        sumScores += numberOfKnockdowns[index + 2];
+        if (round <= 10) {
+            sumScores += numberOfKnockdowns[index];
+            sumScores += numberOfKnockdowns[index + 1];
+            sumScores += numberOfKnockdowns[index + 2];
+        } else {
+            sumScores += numberOfKnockdowns[index];
+        }
     }
 
     private void throwError(int[] numberOfKnockdowns) {

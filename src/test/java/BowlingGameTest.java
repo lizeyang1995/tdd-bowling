@@ -61,4 +61,12 @@ public class BowlingGameTest {
         int result = bowlingGame.calculate(numberOfKnockdowns);
         assertEquals(73, result);
     }
+
+    @Test
+    void should_return_sum_when_calculate_given_Round_10_is_strike() {
+        BowlingGame bowlingGame = new BowlingGame();
+        int[] numberOfKnockdowns = {10, 1, 2, 10, 5, 5, 1, 2, 1, 2, 5, 5, 1, 2, 1, 2, 10, 10, 10};
+        int result = bowlingGame.calculate(numberOfKnockdowns);
+        assertEquals(120, result);
+    }
 }
