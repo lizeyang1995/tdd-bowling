@@ -14,7 +14,7 @@ public class BowlingGame {
             throw new IllegalArgumentException();
         }
         for(int number : numberOfKnockdowns) {
-            if (number < 0) {
+            if (number < 0 || number > 10) {
                 throw new IllegalArgumentException();
             }
         }
