@@ -21,7 +21,7 @@ public class BowlingGame {
             return;
         } else if (isStrike(value)){
             calculateStrikeFrame(numberOfKnockdowns, index);
-        } else if (frameScore == 10){
+        } else if (isSpare()){
             calculateSpareFrame(numberOfKnockdowns, index);
         } else {
             sumScores += value;
@@ -29,6 +29,10 @@ public class BowlingGame {
         isFirstThrow = true;
         frameScore = 0;
         round++;
+    }
+
+    private boolean isSpare() {
+        return frameScore == 10;
     }
 
     private boolean isStrike(int value) {
