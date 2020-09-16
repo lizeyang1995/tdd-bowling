@@ -37,7 +37,7 @@ public class BowlingGameTest {
     }
 
     @Test
-    void should_throw_exception_when_two_throw_numbers_larger_than_10() {
+    void should_throw_exception_when_sum_of_two_throw_numbers_larger_than_10() {
         int[] numberOfKnockdowns = {0, 0, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         assertThrows(IllegalArgumentException.class, () -> bowlingGame.calculate(numberOfKnockdowns));
     }
