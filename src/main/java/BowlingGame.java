@@ -51,7 +51,7 @@ public class BowlingGame {
     }
 
     private void throwError(int[] numberOfKnockdowns) {
-        if (numberOfKnockdowns.length < 12 || numberOfKnockdowns.length > 20) {
+        if (numberOfKnockdowns.length < 11 || numberOfKnockdowns.length > 21) {
             throw new IllegalArgumentException();
         }
         for(int number : numberOfKnockdowns) {
