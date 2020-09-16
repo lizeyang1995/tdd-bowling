@@ -25,13 +25,13 @@ public class BowlingGameTest {
     }
 
     @Test
-    void should_throw_exception_when_calculation_given_array_less_than_11() {
+    void should_throw_exception_when_calculation_given_array_length_less_than_11() {
         int[] numberOfKnockdowns = {10, 10, 10, 10, 10, 10, 10, 10, 10, 1};
         assertThrows(IllegalArgumentException.class, () -> bowlingGame.calculate(numberOfKnockdowns));
     }
 
     @Test
-    void should_throw_exception_when_calculation_given_array_larger_than_21() {
+    void should_throw_exception_when_calculation_given_array_length_larger_than_21() {
         int[] numberOfKnockdowns = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5, 5};
         assertThrows(IllegalArgumentException.class, () -> bowlingGame.calculate(numberOfKnockdowns));
     }
