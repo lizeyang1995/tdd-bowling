@@ -6,6 +6,8 @@ public class BowlingGame {
 
     public int calculate(int[] numberOfKnockdowns) {
         throwError(numberOfKnockdowns);
+        isFirstThrow = true;
+        frameScore = 0;
         for(int index = 0; index < numberOfKnockdowns.length && round <= 10; index++) {
             getSumScores(numberOfKnockdowns, index);
         }
